@@ -113,7 +113,7 @@ def start_game():
         ''')
     
 def change_space(word,letter,space_game):
-    space_game = space_game.replace(" ", "")
+    space_game = space_game.split(' ')
     aux = ''
     for i in range(len(word)):
         if word[i].upper() == letter.upper():
@@ -130,7 +130,6 @@ def change_space(word,letter,space_game):
 
 start_game()
 word = random_word()
-print(word)
 errors = 0
 space_game = spaces(word)
 letter_list = []
