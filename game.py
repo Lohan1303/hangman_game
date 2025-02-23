@@ -1,6 +1,5 @@
 import random as rd
 
-
 def print_hangman(error, word):
     if error == 0:
         print(
@@ -139,15 +138,20 @@ while True:
 
     print_hangman(errors, space_game)
     
+    if '_' not in space_game:
+        print("You win! Congratulations!")
+        break
+    
     letter = input("Enter a letter: ").upper()
     
-    if letter.upper() in letter_list:
+    if letter in letter_list:
         print("You already entered this letter")
         continue
     else:
-        letter_list.append(letter.upper())
-        
-    if letter.upper() not in word.upper():
+        letter_list.append(letter)
+    
+    
+    if letter not in word.upper():
         errors += 1
         if errors == 6:
             print_hangman(errors, space_game)
