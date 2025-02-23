@@ -143,6 +143,15 @@ while True:
     
     letter = input("Enter a letter: ").upper()
     
+    if len(letter) > 1:
+        if letter == word.upper():
+            print("You win! Congratulations!")
+            break
+        else:
+            errors += 1
+            print("Wrong word!") 
+            continue
+    
     if letter in letter_list:
         print("You already entered this letter")
         continue
